@@ -1,0 +1,4 @@
+*.class
+assets/www/
+ant-build/
+ant-gen/
