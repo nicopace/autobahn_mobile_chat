@@ -14,6 +14,7 @@
 
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="js/external/autobahn.min.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
@@ -23,20 +24,32 @@
     <script src="js/controllers.js"></script>
     <script src="js/services.js"></script>
   </head>
-  <body ng-app="starter" animation="slide-left-right-ios7">
-    <!-- 
-      The nav bar that will be updated as we navigate between views.
-    -->
-    <ion-nav-bar class="bar-stable nav-title-slide-ios7">
-      <ion-nav-back-button class="button-icon icon  ion-ios7-arrow-back">
-        Back
-      </ion-nav-back-button>
-    </ion-nav-bar>
-    <!-- 
-      The views will be rendered in the <ion-nav-view> directive below
-      Templates are in the /templates folder (but you could also
-      have templates inline in this html file if you'd like).
-    -->
-    <ion-nav-view></ion-nav-view>
+  <!-- <body ng&#45;app="starter" animation="slide&#45;left&#45;right&#45;ios7"> -->
+  <body ng-app="PubSubAngApp">
+    <h1>Real-time messaging with Crossbar.io and AngularJS</h1>
+    <div ng-controller="PublishingCtrl" class="controller">
+      <input type="text" ng-model="model.message" />
+      <button ng-click="clickMe(model.message)">Publish!</button>
+    </div>
+    <div id="Receiver" ng-controller="ReceivingCtrl" class="controller">
+      We received: <span class="received">{{model.message}}</span>
+    </div>
+    <script>
+  AUTOBAHN_DEBUG = true;
+    </script>
+    <!-- <!&#45;&#45;  -->
+    <!--   The nav bar that will be updated as we navigate between views. -->
+    <!-- &#45;&#45;> -->
+    <!-- <ion&#45;nav&#45;bar class="bar&#45;stable nav&#45;title&#45;slide&#45;ios7"> -->
+    <!--   <ion&#45;nav&#45;back&#45;button class="button&#45;icon icon  ion&#45;ios7&#45;arrow&#45;back"> -->
+    <!--     Back -->
+    <!--   </ion&#45;nav&#45;back&#45;button> -->
+    <!-- </ion&#45;nav&#45;bar> -->
+    <!-- <!&#45;&#45;  -->
+    <!--   The views will be rendered in the <ion&#45;nav&#45;view> directive below -->
+    <!--   Templates are in the /templates folder (but you could also -->
+    <!--   have templates inline in this html file if you'd like). -->
+    <!-- &#45;&#45;> -->
+    <!-- <ion&#45;nav&#45;view></ion&#45;nav&#45;view> -->
   </body>
 </html>
