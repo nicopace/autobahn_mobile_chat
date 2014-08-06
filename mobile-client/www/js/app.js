@@ -1,4 +1,4 @@
-var connection = new autobahn.Connection({url: 'ws://127.0.0.1:8080/ws', realm: 'realm1'});
+var connection = new autobahn.Connection({url: 'ws://192.168.88.249:8080/ws', realm: 'realm1'});
 var app = angular.module("PubSubAngApp", []);
 
 app.controller("PublishingCtrl", function($scope) {
