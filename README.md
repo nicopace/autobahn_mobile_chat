@@ -1,3 +1,8 @@
+Crossbar.io is a cross-platform message router.
+It is great to build realtime apps with blended technologies.
+
+This is a technology test mixing Python and Ionic Framework to build a chat client with realtime technology.
+
 # Install requisites
 
 ```
